@@ -2,10 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face { font-family: 'Inter'; src: url('/fonts/Inter-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; } 
-@font-face { font-family: 'Inter'; src: url('/fonts/Inter-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; }
-@font-face { font-family: 'Inter'; src: url('/fonts/Inter-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; } */
-
 body {
-      font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
+}
+
+.input {
+    border-radius: 60px;
+    border: 1px solid rgba(29, 30, 33, 0.1);
+    background: #fff;
+
+    outline: none;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+
+    border-radius: 60px;
+    background: #59b17a;
+
+    transition: transform 0.5s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    outline: none;
+    transform: scale(1.03);
+}
+
+.title {
+    color: #1d1e21;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }

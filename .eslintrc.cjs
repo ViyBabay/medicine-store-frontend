@@ -9,6 +9,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:prettier/recommended',
         'prettier',
+        // 'react/react-in-jsx-scope',
     ],
     overrides: [
         {
@@ -26,13 +27,17 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
+    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     plugins: ['@typescript-eslint', 'react', 'prettier'],
     rules: {
         'prefer-const': 'warn',
+        'react/jsx-uses-react': 'off',
+        'react/react-in-jsx-scope': 'off',
         'prettier/prettier': [
             'warn',
             {
                 endOfLine: 'auto',
+                allowConstantExport: true,
             },
         ],
     },

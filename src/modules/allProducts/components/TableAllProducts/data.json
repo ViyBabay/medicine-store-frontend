@@ -1,0 +1,272 @@
+[
+    {
+        "id": "0",
+        "photo": "https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg",
+        "name": "Aspirin",
+        "suppliers": "Square",
+        "stock": "12",
+        "price": "89.66",
+        "category": "Medicine"
+    },
+    {
+        "id": "1",
+        "photo": "https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg",
+        "name": "Paracetamol",
+        "suppliers": "Acme",
+        "stock": "19",
+        "price": "34.16",
+        "category": "Heart"
+    },
+    {
+        "id": "2",
+        "photo": "https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg",
+        "name": "Ibuprofen",
+        "suppliers": "Beximco",
+        "stock": "09",
+        "price": "53.76",
+        "category": "Head"
+    },
+    {
+        "id": "3",
+        "photo": "https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg",
+        "name": "Acetaminophen",
+        "suppliers": "ACI",
+        "stock": "14",
+        "price": "28.57",
+        "category": "Hand"
+    },
+    {
+        "id": "4",
+        "photo": "https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg",
+        "name": "Naproxen",
+        "suppliers": "Uniliver",
+        "stock": "10",
+        "price": "56.34",
+        "category": "Leg"
+    },
+    {
+        "id": "5",
+        "photo": "https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg",
+        "name": "Amoxicillin",
+        "suppliers": "Square",
+        "stock": "25",
+        "price": "45.99",
+        "category": "Medicine"
+    },
+    {
+        "id": "6",
+        "photo": "https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg",
+        "name": "Lisinopril",
+        "suppliers": "Acme",
+        "stock": "17",
+        "price": "29.88",
+        "category": "Heart"
+    },
+    {
+        "id": "7",
+        "photo": "https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg",
+        "name": "Ciprofloxacin",
+        "suppliers": "Beximco",
+        "stock": "11",
+        "price": "38.45",
+        "category": "Head"
+    },
+    {
+        "id": "8",
+        "photo": "https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg",
+        "name": "Hydrochlorothiazide",
+        "suppliers": "ACI",
+        "stock": "22",
+        "price": "24.76",
+        "category": "Hand"
+    },
+    {
+        "id": "9",
+        "photo": "https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg",
+        "name": "Prednisone",
+        "suppliers": "Uniliver",
+        "stock": "15",
+        "price": "48.99",
+        "category": "Leg"
+    },
+    {
+        "id": "10",
+        "photo": "https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg",
+        "name": "Propranolol",
+        "suppliers": "Square",
+        "stock": "18",
+        "price": "35.66",
+        "category": "Medicine"
+    },
+    {
+        "id": "11",
+        "photo": "https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg",
+        "name": "Omeprazole",
+        "suppliers": "Acme",
+        "stock": "14",
+        "price": "42.16",
+        "category": "Heart"
+    },
+    {
+        "id": "12",
+        "photo": "https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg",
+        "name": "Diazepam",
+        "suppliers": "Beximco",
+        "stock": "08",
+        "price": "27.76",
+        "category": "Head"
+    },
+    {
+        "id": "13",
+        "photo": "https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg",
+        "name": "Simvastatin",
+        "suppliers": "ACI",
+        "stock": "30",
+        "price": "18.57",
+        "category": "Hand"
+    },
+    {
+        "id": "14",
+        "photo": "https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg",
+        "name": "Tramadol",
+        "suppliers": "Uniliver",
+        "stock": "13",
+        "price": "52.34",
+        "category": "Leg"
+    },
+    {
+        "id": "15",
+        "photo": "https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg",
+        "name": "Losartan",
+        "suppliers": "Square",
+        "stock": "20",
+        "price": "31.99",
+        "category": "Medicine"
+    },
+    {
+        "id": "16",
+        "photo": "https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg",
+        "name": "Metformin",
+        "suppliers": "Acme",
+        "stock": "12",
+        "price": "22.88",
+        "category": "Heart"
+    },
+    {
+        "id": "17",
+        "photo": "https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg",
+        "name": "Alprazolam",
+        "suppliers": "Beximco",
+        "stock": "09",
+        "price": "47.76",
+        "category": "Head"
+    },
+    {
+        "id": "18",
+        "photo": "https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg",
+        "name": "Atorvastatin",
+        "suppliers": "ACI",
+        "stock": "18",
+        "price": "19.57",
+        "category": "Hand"
+    },
+    {
+        "id": "19",
+        "photo": "https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg",
+        "name": "Zolpidem",
+        "suppliers": "Uniliver",
+        "stock": "16",
+        "price": "41.34",
+        "category": "Leg"
+    },
+    {
+        "id": "20",
+        "photo": "https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg",
+        "name": "Folic Acid",
+        "suppliers": "Square",
+        "stock": "14",
+        "price": "15.66",
+        "category": "Medicine"
+    },
+    {
+        "id": "21",
+        "photo": "https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg",
+        "name": "Calcium Carbonate",
+        "suppliers": "Acme",
+        "stock": "21",
+        "price": "18.16",
+        "category": "Heart"
+    },
+    {
+        "id": "22",
+        "photo": "https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg",
+        "name": "Vitamin D",
+        "suppliers": "Beximco",
+        "stock": "16",
+        "price": "12.76",
+        "category": "Head"
+    },
+    {
+        "id": "23",
+        "photo": "https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg",
+        "name": "Fish Oil",
+        "suppliers": "ACI",
+        "stock": "25",
+        "price": "23.57",
+        "category": "Hand"
+    },
+    {
+        "id": "24",
+        "photo": "https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg",
+        "name": "Multivitamins",
+        "suppliers": "Uniliver",
+        "stock": "19",
+        "price": "17.34",
+        "category": "Leg"
+    },
+    {
+        "id": "25",
+        "photo": "https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg",
+        "name": "Toothpaste",
+        "suppliers": "Square",
+        "stock": "30",
+        "price": "6.66",
+        "category": "Dental Care"
+    },
+    {
+        "id": "26",
+        "photo": "https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg",
+        "name": "Mouthwash",
+        "suppliers": "Acme",
+        "stock": "25",
+        "price": "8.16",
+        "category": "Dental Care"
+    },
+    {
+        "id": "27",
+        "photo": "https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg",
+        "name": "Toothbrush",
+        "suppliers": "Beximco",
+        "stock": "20",
+        "price": "4.76",
+        "category": "Dental Care"
+    },
+    {
+        "id": "28",
+        "photo": "https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg",
+        "name": "Facial Cleanser",
+        "suppliers": "ACI",
+        "stock": "14",
+        "price": "11.57",
+        "category": "Skin Care"
+    },
+    {
+        "id": "29",
+        "photo": "https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg",
+        "name": "Moisturizer",
+        "suppliers": "Uniliver",
+        "stock": "18",
+        "price": "13.34",
+        "category": "Skin Care"
+    }
+]
