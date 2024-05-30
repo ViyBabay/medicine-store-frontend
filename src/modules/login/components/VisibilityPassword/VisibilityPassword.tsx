@@ -12,7 +12,7 @@ export const VisibilityPassword: FC<VisibilityPasswordProps> = ({
 }) => {
     return (
         <div
-            className="absolute bottom-[5%] right-[20px] -translate-y-1/2 transform cursor-pointer"
+            className="absolute bottom-[3%] right-[20px] -translate-y-1/2 transform cursor-pointer"
             onClick={toggleShowPassword}
         >
             {showPassword ? (

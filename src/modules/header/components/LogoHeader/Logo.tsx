@@ -1,7 +1,10 @@
 import Logo from '@/shared/icon/logo.svg';
+import { Link } from 'react-router-dom';
 
 export const LogoHeader = () => {
     return (
-        <img src={Logo} alt="logo" width={32} height={32} className="md:mr-8" />
+        <Link to="/">
+            <img src={Logo} alt="logo" width={40} height={40} />
+        </Link>
     );
 };

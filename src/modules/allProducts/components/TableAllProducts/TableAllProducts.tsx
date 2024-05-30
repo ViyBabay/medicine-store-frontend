@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import {
     Table,
     TableHeader,
@@ -7,121 +7,173 @@ import {
     TableRow,
     TableCell,
 } from '@nextui-org/table';
-
-interface Product {
-    id: string;
-    photo: string;
-    name: string;
-    suppliers: string;
-    stock: string;
-    price: string;
-    category: string;
+import icon from '@/shared/icon/sprite.svg';
+import { TitleTablet } from '@/shared/components/TitleTable/TitleTablet';
+import { CustomPagination } from '@/shared/components/Pagination/Pagination';
+import { PaginationItemType } from '@nextui-org/react';
+import { Product } from '@/shared/utils/difinitions';
+import { useAppDispatch, useAppSelector } from '@/redux/hook';
+import {
+    filterValueProducts,
+    selectAllProducts,
+    selectIsLoading,
+} from '@/redux/products/productsSelectors';
+import {
+    fetchAllProductsThunk,
+    fetchCurrentProductThunk,
+    fetchDeleteProductThunk,
+} from '@/redux/products/productsOperations';
+import { SkeletonTable } from '@/shared/components/SkeletonTable/SkeletonTable';
+import products from '@/shared/utils/data/products.json';
+interface TableAllProductsProps {
+    openModal: (type: string) => void;
 }
 
-const rows: Product[] = [
-    {
-        id: '0',
-        photo: 'https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg',
-        name: 'Aspirin',
-        suppliers: 'Square',
-        stock: '12',
-        price: '89.66',
-        category: 'Medicine',
-    },
-    {
-        id: '1',
-        photo: 'https://i.ibb.co/Hg0zZkQ/shop-4-7-1000x1000-min.jpg',
-        name: 'Paracetamol',
-        suppliers: 'Acme',
-        stock: '19',
-        price: '34.16',
-        category: 'Heart',
-    },
-    {
-        id: '2',
-        photo: 'https://i.ibb.co/02WmJdc/5-19-1000x1000-min.jpg',
-        name: 'Ibuprofen',
-        suppliers: 'Beximco',
-        stock: '09',
-        price: '53.76',
-        category: 'Head',
-    },
-    {
-        id: '3',
-        photo: 'https://i.ibb.co/GxTVSVk/shop-4-9-1000x1000-min.jpg',
-        name: 'Acetaminophen',
-        suppliers: 'ACI',
-        stock: '14',
-        price: '28.57',
-        category: 'Hand',
-    },
-    {
-        id: '4',
-        photo: 'https://i.ibb.co/X330FTj/shop-4-10-1000x1000-min.jpg',
-        name: 'Naproxen',
-        suppliers: 'Uniliver',
-        stock: '10',
-        price: '56.34',
-        category: 'Leg',
-    },
-    {
-        id: '5',
-        photo: 'https://i.ibb.co/bLKP624/5-15-1000x1000-min.jpg',
-        name: 'Amoxicillin',
-        suppliers: 'Square',
-        stock: '25',
-        price: '45.99',
-        category: 'Medicine',
-    },
+const columns = [
+    { name: 'Product Info', uid: 'product_info' },
+    { name: 'Category', uid: 'category' },
+    { name: 'Stock', uid: 'stock' },
+    { name: 'Suppliers', uid: 'suppliers' },
+    { name: 'Price', uid: 'price' },
+    { name: 'Action', uid: 'action' },
 ];
+const dataProductsSlice = products.slice(0, 6);
 
-export const TableAllProducts = () => {
-    const handleEdit = (id: string) => {
-        console.log('Edit product with id:', id);
+export const TableAllProducts: FC<TableAllProductsProps> = ({ openModal }) => {
+    const dispatch = useAppDispatch();
+    const productsData = useAppSelector(selectAllProducts);
+    const isLoading = useAppSelector(selectIsLoading);
+
+    const [pageProducts, setPageProducts] = useState<number>(1);
+
+    const filterQuery = useAppSelector(filterValueProducts);
+
+    const allProductsPages = productsData?.pages;
+
+    useEffect(() => {
+        const fetchProducts = () => {
+            dispatch(
+                fetchAllProductsThunk({ filterQuery, page: pageProducts }),
+            );
+        };
+        fetchProducts();
+    }, [filterQuery, pageProducts]);
+
+    const handleEdit = async (productId: string) => {
+        dispatch(fetchCurrentProductThunk(productId));
+        openModal('edit');
     };
 
     const handleDelete = (id: string) => {
-        console.log('Delete product with id:', id);
+        dispatch(fetchDeleteProductThunk(id));
     };
 
+    const renderCell = React.useCallback(
+        (product: Product, columnKey: React.Key) => {
+            const cellValue = product[columnKey as keyof Product];
+            switch (columnKey) {
+                case 'product_info':
+                    return <p>{product.name}</p>;
+                case 'category':
+                    return <p>{product.category}</p>;
+                case 'stock':
+                    return <p>{product.stock}</p>;
+                case 'suppliers':
+                    return <p>{product.suppliers}</p>;
+                case 'price':
+                    return <p>{product.price}</p>;
+                case 'action':
+                    return (
+                        <div className="flex gap-2">
+                            <button
+                                className="btn border-border-green flex h-8  w-8 rounded-full border   !bg-transparent hover:!bg-green-50 "
+                                onClick={() => handleEdit(product._id)}
+                                disabled={isLoading}
+                            >
+                                <svg
+                                    width={14}
+                                    height={14}
+                                    className="stroke-light-green "
+                                    style={{ fill: 'none' }}
+                                >
+                                    <use href={icon + '#icon-edit'}></use>
+                                </svg>
+                            </button>
+                            <button
+                                className="btn border-border-red flex h-8  w-8 rounded-full border !bg-transparent  hover:!bg-red-50   "
+                                onClick={() => handleDelete(product._id)}
+                                disabled={isLoading}
+                            >
+                                <svg
+                                    width={14}
+                                    height={14}
+                                    className="stroke-main-red "
+                                    style={{ fill: 'none' }}
+                                >
+                                    <use href={icon + '#icon-trash'}></use>
+                                </svg>
+                            </button>
+                        </div>
+                    );
+                default:
+                    return cellValue;
+            }
+        },
+        [],
+    );
+
     return (
-        <Table aria-label="Product table">
-            <TableHeader>
-                <TableColumn key="name">Product Info</TableColumn>
-                <TableColumn key="category">Category</TableColumn>
-                <TableColumn key="stock">Stock</TableColumn>
-                <TableColumn key="suppliers">Suppliers</TableColumn>
-                <TableColumn key="price">Price</TableColumn>
-                <TableColumn key="action">Action</TableColumn>
-            </TableHeader>
-            <TableBody items={rows}>
-                {item => (
-                    <TableRow key={item.id}>
-                        {columnKey => (
-                            <TableCell>
-                                {columnKey === 'action' ? (
-                                    <div>
-                                        <button
-                                            onClick={() => handleEdit(item.id)}
-                                        >
-                                            Edit
-                                        </button>
-                                        <button
-                                            onClick={() =>
-                                                handleDelete(item.id)
-                                            }
-                                        >
-                                            Delete
-                                        </button>
-                                    </div>
-                                ) : (
-                                    item[columnKey as keyof Product]
+        <section className="my-5 scroll-px-[50px] overflow-x-auto border-x-scroll-white px-5 pb-10 scrollbar-thin scrollbar-track-[#F1F1F1] scrollbar-thumb-medium-grey md:px-8 desk:px-10">
+            <div className="w-[700px] md:w-[1000px] xl:w-full">
+                <TitleTablet text="All products" />
+                {productsData ? (
+                    <>
+                        {' '}
+                        <Table
+                            removeWrapper
+                            classNames={{
+                                th: 'border-b border-r bg-natural-white p-[14px] text-xs/[14px] font-medium text-light-grey first:pl-0 last:border-r-0 md:p-5 md:px-5 md:text-sm/[18px]',
+                                td: 'border-r p-[14px] py-[20px] text-left text-xs/[14px] font-medium text-main-black first:pl-0 last:border-r-0 last:pr-0 md:p-5 md:text-base/[18px]',
+                            }}
+                            aria-label="All products"
+                            className="rounded-b-lg border-x border-b border-border-grey bg-natural-white px-[14px] md:px-5 xl:pb-[15px]"
+                        >
+                            <TableHeader columns={columns}>
+                                {column => (
+                                    <TableColumn key={column.uid}>
+                                        {column.name}
+                                    </TableColumn>
                                 )}
-                            </TableCell>
-                        )}
-                    </TableRow>
+                            </TableHeader>
+                            <TableBody items={productsData?.data}>
+                                {item => (
+                                    <TableRow
+                                        key={item._id}
+                                        className="border-b last:border-none"
+                                    >
+                                        {columnKey => (
+                                            <TableCell>
+                                                {renderCell(item, columnKey)}
+                                            </TableCell>
+                                        )}
+                                    </TableRow>
+                                )}
+                            </TableBody>
+                        </Table>
+                        <CustomPagination
+                            pageActive={pageProducts}
+                            pages={allProductsPages}
+                            setPage={setPageProducts}
+                        />
+                    </>
+                ) : (
+                    <div className="h-[437px] rounded-b-lg border-x border-b border-border-grey bg-white px-[14px] md:px-5 xl:pb-[20px]">
+                        {dataProductsSlice.map((_, index) => (
+                            <SkeletonTable key={index} columns={columns} />
+                        ))}
+                    </div>
                 )}
-            </TableBody>
-        </Table>
+            </div>
+        </section>
     );
 };

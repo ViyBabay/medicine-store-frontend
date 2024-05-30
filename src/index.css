@@ -3,43 +3,119 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .input {
-    border-radius: 60px;
-    border: 1px solid rgba(29, 30, 33, 0.1);
-    background: #fff;
+  border-radius: 60px;
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  background: #fff;
+  outline: none;
 
-    outline: none;
+  box-sizing: border-box;
+}
+
+.btn,
+.btnGreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 60px;
+  transition: transform 0.5s ease;
+  box-sizing: border-box;
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: #fff;
+  background: #59b17a;
+}
 
-    color: #fff;
-
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-
-    border-radius: 60px;
-    background: #59b17a;
-
-    transition: transform 0.5s ease;
+.btnGreen {
+  border: 1px solid rgba(89, 177, 122, 0.5);
 }
 
 .btn:hover,
-.btn:focus {
-    outline: none;
-    transform: scale(1.03);
+.btnGreen:hover,
+.btn:focus,
+.btnGreen:focus {
+  outline: none;
+  transform: scale(1.04);
 }
 
 .title {
-    color: #1d1e21;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  color: #1d1e21;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.custom-scrollbar {
+  width: 70vh;
+  overflow-x: auto;
+  /* margin-top: 16px; */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  background-color: transparent;
+  border-radius: 20px;
+  width: 6px;
+  opacity: 0.3;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 20px;
+  opacity: 0.3;
+
+  color: #1d1e21;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.active svg {
+  fill: #59b17a;
+  stroke: #59b17a;
+}
+
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.custom-pagination button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #e7f1ed;
+  margin: 0 5px;
+}
+
+.custom-pagination button.active {
+  background-color: #59b17a;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+thead tr:nth-child(2) {
+  @apply hidden bg-gray-200 p-4;
+}
+
+[data-slot='input-wrapper'] {
+  border: none;
+}
+
+span[data-slot='cursor'] {
+  background-color: #59b17a;
+  color: #59b17a;
+  @apply h-4 !min-w-4  w-4 shrink-0 rounded-full;
 }

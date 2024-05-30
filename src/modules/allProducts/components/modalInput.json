@@ -1,0 +1,27 @@
+[
+  {
+    "name": "name",
+    "placeholder": "Product Info",
+    "component": "ModalInput"
+  },
+  {
+    "name": "category",
+    "placeholder": "Category",
+    "component": "SelectModal"
+  },
+  {
+    "name": "stock",
+    "placeholder": "Stock",
+    "component": "ModalInput"
+  },
+  {
+    "name": "suppliers",
+    "placeholder": "Suppliers",
+    "component": "ModalInput"
+  },
+  {
+    "name": "price",
+    "placeholder": "Price",
+    "component": "ModalInput"
+  }
+]

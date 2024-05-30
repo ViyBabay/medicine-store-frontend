@@ -1,14 +1,8 @@
-import React from 'react';
-import { TableAllProducts } from '../../modules/allProducts/components/TableAllProducts/TableAllProducts';
-import { AddNew } from '../../modules/allProducts/components/AddNew/AddNew';
-import { Filter } from '../../modules/allProducts/components/Filter/Filter';
+import { AllProducts } from '@/modules/allProducts/components/AllProducts/AllProducts';
+import { FC } from 'react';
 
-export const AllProductsPage = () => {
-    return (
-        <div>
-            <Filter />
-            <AddNew />
-            <TableAllProducts />
-        </div>
-    );
+const AllProductsPage: FC = (): JSX.Element => {
+  return <AllProducts />;
 };
+
+export default AllProductsPage;
