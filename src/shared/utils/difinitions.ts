@@ -1,14 +1,15 @@
 import { CalendarDate } from '@nextui-org/react';
 import { SerializedError } from '@reduxjs/toolkit';
+import { Draft } from 'immer';
 
 export interface QueryParams {
-    [key: string]: string | number | undefined;
+  [key: string]: string | number | undefined;
 }
 interface Pagination {
-    total: number;
-    page: number;
-    pages: number;
-    limit: number;
+  total: number;
+  page: number;
+  pages: number;
+  limit: number;
 }
 
 /**
@@ -18,29 +19,29 @@ interface Pagination {
 */
 
 export interface User {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
 }
 export interface AuthState {
-    user: CurrentUser;
-    isLoggedIn: boolean;
-    isLoading: boolean;
-    error: undefined;
-    isRefreshing: boolean;
+  user: CurrentUser;
+  isLoggedIn: boolean;
+  isLoading: boolean;
+  error: undefined;
+  isRefreshing: boolean;
 }
 
 export interface SignInData {
-    accessToken: string;
-    refreshToken: string;
+  accessToken: string;
+  refreshToken: string;
 }
 
 export interface CurrentUser {
-    name?: string;
-    email?: string;
+  name?: string;
+  email?: string;
 }
 
 export interface SignOutData {
-    message: string;
+  message: string;
 }
 
 /**
@@ -49,25 +50,25 @@ export interface SignOutData {
   |============================
 */
 export interface Customer {
-    _id: string;
-    image: string;
-    name: string;
-    email: string;
-    spent: string;
-    phone: string;
-    address: string;
-    register_date: string;
+  _id: string;
+  image: string;
+  name: string;
+  email: string;
+  spent: string;
+  phone: string;
+  address: string;
+  register_date: string;
 }
 
 export interface CustomersData extends Pagination {
-    data: Customer[];
+  data: Customer[];
 }
 
 export interface CustomersState {
-    customers: CustomersData | null;
-    filter: string;
-    isLoading: boolean;
-    error: SerializedError | undefined;
+  customers: CustomersData | null;
+  filter: string;
+  isLoading: boolean;
+  error: SerializedError | undefined;
 }
 /**
   |============================
@@ -76,21 +77,21 @@ export interface CustomersState {
 */
 
 export interface Transaction {
-    _id: string;
-    name: string;
-    amount: string;
-    type: string;
+  _id: string;
+  name: string;
+  amount: string;
+  type: string;
 }
 
 export interface TransactionsData extends Pagination {
-    data: Transaction[];
+  data: Transaction[];
 }
 
 export interface TransactionsState {
-    transactions: TransactionsData | null;
-    filter: string;
-    isLoading: boolean;
-    error: SerializedError | undefined;
+  transactions: TransactionsData | null;
+  filter: string;
+  isLoading: boolean;
+  error: SerializedError | undefined;
 }
 
 /**
@@ -100,27 +101,27 @@ export interface TransactionsState {
 */
 
 export interface Product {
-    _id: string;
-    name: string;
-    suppliers: string;
-    stock: string;
-    price: string;
-    category: string;
-    photo: string;
+  _id: string;
+  name: string;
+  suppliers: string;
+  stock: string;
+  price: string;
+  category: string;
+  photo: string;
 }
 
 export type InitialValueProduct = Omit<Product, '_id' | 'photo'>;
 
 export interface ProductsData extends Pagination {
-    data: Product[];
+  data: Product[];
 }
 
 export interface ProductsState {
-    products: ProductsData | null;
-    currentProduct: Product | null;
-    filter: string;
-    isLoading: boolean;
-    error: SerializedError | undefined;
+  products: ProductsData | null;
+  currentProduct: Product | null;
+  filter: string;
+  isLoading: boolean;
+  error: SerializedError | undefined;
 }
 
 /**
@@ -130,27 +131,27 @@ export interface ProductsState {
 */
 
 export interface Supplier {
-    _id: string;
-    name: string;
-    address: string;
-    suppliers: string;
-    date: CalendarDate | string;
-    amount: string;
-    status: string;
+  _id: string;
+  name: string;
+  address: string;
+  suppliers: string;
+  date: Draft<CalendarDate> | string;
+  amount: string;
+  status: string;
 }
 
 export type InitialValueSuppliers = Omit<Supplier, '_id'>;
 
 export interface SuppliersData extends Pagination {
-    data: Supplier[];
+  data: Supplier[];
 }
 
 export interface SuppliersState {
-    suppliers: SuppliersData | null;
-    currentSupplier: Supplier | null;
-    filter: string;
-    isLoading: boolean;
-    error: SerializedError | undefined;
+  suppliers: Draft<SuppliersData> | null;
+  currentSupplier: Draft<Supplier> | null;
+  filter: string;
+  isLoading: boolean;
+  error: SerializedError | undefined;
 }
 
 /**
@@ -160,24 +161,24 @@ export interface SuppliersState {
 */
 
 export interface Order {
-    _id: string;
-    photo: string;
-    name: string;
-    address: string;
-    products: string;
-    order_date: string;
-    price: string;
-    status: string;
+  _id: string;
+  photo: string;
+  name: string;
+  address: string;
+  products: string;
+  order_date: string;
+  price: string;
+  status: string;
 }
 
 export interface OrdersData extends Pagination {
-    data: Order[];
+  data: Order[];
 }
 export interface OrdersState {
-    orders: OrdersData | null;
-    filter: string;
-    isLoading: boolean;
-    error: SerializedError | undefined;
+  orders: OrdersData | null;
+  filter: string;
+  isLoading: boolean;
+  error: SerializedError | undefined;
 }
 
 /**
@@ -186,5 +187,5 @@ export interface OrdersState {
   |============================
 */
 export interface DefaultThunkApiConfig {
-    rejectValue: SerializedError;
+  rejectValue: SerializedError;
 }

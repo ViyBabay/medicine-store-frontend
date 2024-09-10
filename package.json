@@ -18,8 +18,6 @@
         "date-fns": "^3.6.0",
         "formik": "^2.4.5",
         "framer-motion": "^11.1.7",
-        "gsap": "^3.12.5",
-        "lines-and-columns": "^2.0.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^5.0.1",

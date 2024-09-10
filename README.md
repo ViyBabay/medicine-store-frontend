@@ -1,30 +1,68 @@
-# React + TypeScript + Vite
+# Medicine Store Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Login
 
-Currently, two official plugins are available:
+To log in, use:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Email**: admin3@gmail.com
+-   **Password**: 123456
 
-## Expanding the ESLint configuration
+## Project Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This is a React-based web application for displaying statistical data such as
+revenues, expenses, and other analytics for a medical store. It features a
+responsive and functional dashboard interface.
 
-- Configure the top-level `parserOptions` property like this:
+## Responsive Design
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-   **Mobile**: Responsive layout starting from 320px, fully adaptive from
+    375px.
+-   **Tablet**: From 768px.
+-   **Desktop**: From 1440px.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Technical Requirements
+
+-   Font integration.
+-   Optimization for vector and raster images.
+-   Support for retina displays.
+-   Icon sprite usage.
+-   Favicon included.
+
+## Technologies
+
+-   **React**, **React Router**, **Redux Toolkit**: Core libraries.
+-   **TailwindCSS**: For styling.
+-   **Axios**: For HTTP requests.
+-   **NextUI**: UI component library.
+-   **Formik**, **Yup**: Form handling and validation.
+-   **Framer Motion**: Animations.
+-   **React Icons**: Icons.
+-   **TypeScript**, **ESLint**, **Prettier**, **Vite**: Development tools.
+
+## Installation and Running the Project
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/ViyBabay/medicine-store-frontend.git
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    cd medicalDashBoard_backend
+    npm install
+    ```
+
+3. Start the project:
+    ```bash
+    npm start
+    ```
+
+## Authors
+
+-   [ViyBabay](https://github.com/ViyBabay/medicine-store-frontend)
+
+## License
+
+This project is licensed under the MIT License.
