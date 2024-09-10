@@ -1,4 +1,3 @@
-import React from 'react';
 import icon from '@/shared/icon/sprite.svg';
 
 export const Filter = () => {
